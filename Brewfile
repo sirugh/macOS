@@ -53,8 +53,6 @@ brew "tree"
 brew "unrar"
 # Valet for PHP https://github.com/weprovide/valet-plus
 brew "valet-php@7.2"
-# Vi 'workalike' with many additional features
-brew "vim"
 # Internet file retriever
 brew "wget"
 # JavaScript package manager
