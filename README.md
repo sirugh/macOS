@@ -11,15 +11,15 @@ How I setup a new Mac.
 ## 2. Install deps
 
 ```console
-git clone https://github.com/caarlos0/mac.git
-cd mac
+git clone https://github.com/sirugh/macOS.git
+cd macOS
 brew bundle
 ```
 
 ## 3. Install dotfiles
 
 ```console
-git clone https://github.com/caarlos0/dotfiles.git ~/.dotfiles
+git clone https://github.com/sirugh/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./script/bootstrap
 zsh
@@ -42,61 +42,12 @@ Also fix perms:
 $ chmod 0600 ~/.ssh/id_rsa
 ```
 
-## 5. Setup GPG signing
-
-Create default config files:
-
-```console
-gpg --list-keys
-```
-
-Setup pinentry:
-
-```console
-$ brew install pinentry-mac
-$ echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
-$ killall gpg-agent
-```
-
-Import the key:
-
-```console
-$ export GPG_TTY=$(tty)
-$ keybase pgp export -q C14AB940 | gpg --import
-$ keybase pgp export -q C14AB940 --secret | gpg --import --allow-secret-key-import
-```
-
-> Change C14AB940 with your key id.
-
-Setup git:
-
-```console
-$ git config --global gpg.program $(which gpg)
-$ git config --global user.signingkey C14AB940
-$ git config --global commit.gpgsign true
-```
-
-> Change C14AB940 with your key id.
-
-Test it:
-
-```console
-$ mkdir -p /tmp/test
-$ cd $_
-$ git init
-$ git commit --allow-empty -m 'signsss'
-$ git log --show-signature
-```
-
-That's it!
-
-
-## 6. Reboot
+## 5. Reboot
 
 ```console
 sudo reboot
 ```
 
-## 7. Profit!
+## 6. Profit!
 
 :beers:
