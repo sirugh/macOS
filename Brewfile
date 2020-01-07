@@ -43,6 +43,8 @@ brew "pstree"
 brew "pyenv"
 # Ruby version manager
 brew "rbenv"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
 # Simplified and community-driven man pages
 brew "tldr"
 # Display directories as trees (with optional color/HTML output)
