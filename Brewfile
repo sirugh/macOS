@@ -74,3 +74,6 @@ cask "steam"
 cask "vagrant"
 cask "visual-studio-code"
 cask "vlc"
+
+# Window management
+cask "spectacle"
